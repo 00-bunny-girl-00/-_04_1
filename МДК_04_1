@@ -1,0 +1,77 @@
+using System;
+
+public class Phone
+{
+    public int Number { get; set; }
+    public string Model { get; set; }
+    public int Weight { get; set; }
+    public Phone(string model, int weight, int number)
+    {
+        Number = number;
+        Model = model;
+        Weight = weight;
+
+        Phone phone1 = new Phone("BS583F1", 555);
+        Phone phone2 = new Phone();
+    }
+
+    public Phone(string model, int number)
+    {
+        Number = number;
+        Model = model;
+    }
+    public Phone()
+    {
+        return;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Phone phone1 = new Phone("GP589D2", 120, 444);
+        Console.WriteLine("Phone1 model = {0} weight = {1} number = {2}", phone1.Model, phone1.Weight, phone1.Number);
+        Console.WriteLine(GetNumber(phone1.Number));
+        Console.WriteLine(ReceiveCall("Nastyshka"));
+
+        Phone phone2 = new Phone("GP289D1", 112, 555);
+        Console.WriteLine("Phone1 model = {0} weight = {1} number = {2}", phone2.Model, phone2.Weight, phone2.Number);
+        Console.WriteLine(GetNumber(phone2.Number));
+        Console.WriteLine(ReceiveCall("Artemka"));
+
+        Phone phone3 = new Phone("GP289D1", 102, 545);
+        Console.WriteLine("Phone1 model = {0} weight = {1} number = {2}", phone3.Model, phone3.Weight, phone3.Number);
+        Console.WriteLine(GetNumber(phone3.Number));
+        Console.WriteLine(ReceiveCall("Varvarka"));
+
+        Console.WriteLine(ReceiveCall("Varvarka", 555));
+
+        SendMessage(5, 5, 5, 5, 5);
+    }
+
+    private static int GetNumber(int number)
+    {
+        return number;
+    }
+
+    private static string ReceiveCall(string name)
+    {
+        string var = "Звонит " + name;
+        return var;
+    }
+
+    private static string ReceiveCall(string name, int number)
+    {
+        string var = "Звонит " + name + " с номера телефона - " + number;
+        return var;
+    }
+
+    private static void SendMessage(params int[] parameters)
+    {
+        foreach(int parameter in parameters)
+        {
+            Console.WriteLine(parameter);
+        }
+    }
+}
