@@ -24,13 +24,13 @@ class Program
     {
         Person person1 = new Person("Anastasiya", 17);
         Person person2 = new Person();
-        Move(person1.Age);
+        Move(person1.FullName);
         Talk(person1.FullName);
     }
 
     private static void Move(int age)
     {
-        Console.WriteLine("Данному человеку " + age + " лет");
+        Console.WriteLine("Данного человека зовут " + fullname);
     }
 
     private static void Talk(string fullname)
